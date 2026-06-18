@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{font-family:Arial;background:linear-gradient(45deg,#f6d365,#fda085);display:flex;justify-content:center;align-items:center;height:100vh;}
+.box{background:white;padding:30px;border-radius:15px;text-align:center;width:350px;}
+input,button{width:100%;padding:10px;margin:8px 0;}
+button{background:darkorange;color:white;border:none;}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Simple Interest</h2>
+<input type="number" id="p" placeholder="Principal">
+<input type="number" id="r" placeholder="Rate">
+<input type="number" id="t" placeholder="Time">
+<button onclick="calc()">Calculate</button>
+<h3 id="result"></h3>
+</div>
+<script>
+function calc(){
+let p=document.getElementById("p").value;
+let r=document.getElementById("r").value;
+let t=document.getElementById("t").value;
+let si=(p*r*t)/100;
+document.getElementById("result").innerHTML="SI = "+si;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. Reverse a Number</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #eeeeee;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-left: 4px solid #00adb5;
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 { color: #00adb5; margin-top: 0; }
+        p { color: #95a5a6; font-size: 0.9rem; }
+        .input-group { display: flex; gap: 10px; margin-top: 1.5rem; }
+        input {
+            background: #2d2d2d; border: 1px solid #444; color: #fff;
+            padding: 0.6rem; border-radius: 4px; flex: 1; outline: none;
+        }
+        input:focus { border-color: #00adb5; }
+        button {
+            background: #00adb5; color: #fff; border: none;
+            padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; font-weight: bold;
+        }
+        button:hover { background: #008c95; }
+        .result {
+            margin-top: 1.5rem; padding: 0.8rem; background: #151515;
+            border-radius: 4px; font-family: monospace; font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>11. Reverse a Number</h2>
+    <p>Takes a number and uses a loop configuration to flip its digits.</p>
+    <div class="input-group">
+        <input type="number" id="numInput" placeholder="Enter an integer">
+        <button onclick="reverseNumber()">Reverse</button>
+    </div>
+    <div class="result" id="resultBox">Result will appear here...</div>
+</div>
+
+<script>
+    function reverseNumber() {
+        let numStr = document.getElementById('numInput').value;
+        if (!numStr) {
+            document.getElementById('resultBox').innerText = "Please enter a number.";
+            return;
+        }
+        let isNegative = numStr.startsWith('-');
+        let cleanStr = isNegative ? numStr.substring(1) : numStr;
+        let reversedStr = "";
+        
+        for (let i = cleanStr.length - 1; i >= 0; i--) {
+            reversedStr += cleanStr[i];
+        }
+        
+        let finalResult = isNegative ? '-' + reversedStr : reversedStr;
+        document.getElementById('resultBox').innerText = `Reversed: ${finalResult}`;
+    }
+</script>
+
+</body>
+</html>

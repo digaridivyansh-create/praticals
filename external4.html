@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{font-family:Arial;background:linear-gradient(45deg,#84fab0,#8fd3f4);display:flex;justify-content:center;align-items:center;height:100vh;}
+.box{background:white;padding:30px;border-radius:15px;text-align:center;width:350px;}
+input,button{width:100%;padding:10px;margin:10px 0;}
+button{background:teal;color:white;border:none;}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Table Generator</h2>
+<input type="number" id="num">
+<button onclick="table()">Generate</button>
+<pre id="result"></pre>
+</div>
+<script>
+function table(){
+let n=document.getElementById("num").value;
+let out="";
+for(let i=1;i<=10;i++){
+out+=n+" x "+i+" = "+(n*i)+"\n";
+}
+document.getElementById("result").textContent=out;
+}
+</script>
+</body>
+</html>

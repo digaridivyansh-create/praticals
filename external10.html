@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{font-family:Arial;background:linear-gradient(45deg,#ffecd2,#fcb69f);display:flex;justify-content:center;align-items:center;height:100vh;}
+.box{background:white;padding:30px;border-radius:15px;text-align:center;width:350px;}
+input,button{width:100%;padding:10px;margin:10px 0;}
+button{background:brown;color:white;border:none;}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Vowel Checker</h2>
+<input type="text" id="char" maxlength="1" placeholder="Enter Character">
+<button onclick="check()">Check</button>
+<h3 id="result"></h3>
+</div>
+<script>
+function check(){
+let ch=document.getElementById("char").value.toLowerCase();
+if(ch=="a"||ch=="e"||ch=="i"||ch=="o"||ch=="u")
+document.getElementById("result").innerHTML="Vowel";
+else
+document.getElementById("result").innerHTML="Consonant";
+}
+</script>
+</body>
+</html>

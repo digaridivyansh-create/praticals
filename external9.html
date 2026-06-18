@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pattern Generator</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family: Arial;
+    background: linear-gradient(135deg,#89f7fe,#66a6ff);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.container{
+    background:white;
+    padding:30px;
+    width:400px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    text-align:center;
+}
+input{
+    width:100%;
+    padding:12px;
+    margin:15px 0;
+    border-radius:8px;
+    border:1px solid gray;
+}
+button{
+    width:100%;
+    padding:12px;
+    background:#0077ff;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+button:hover{
+    transform:scale(1.03);
+}
+#result{
+    margin-top:20px;
+    background:#f4f4f4;
+    padding:15px;
+    border-radius:10px;
+    font-size:20px;
+    white-space:pre-line;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h2>Number Pattern Generator</h2>
+
+<input type="number" id="num" placeholder="Enter Number">
+
+<button onclick="generatePattern()">Generate</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+function generatePattern(){
+    let n=document.getElementById("num").value;
+    let output="";
+
+    for(let i=1;i<=n;i++){
+        for(let j=1;j<=i;j++){
+            output+=j;
+        }
+        output+="\n";
+    }
+
+document.getElementById("result").textContent=output;
+}
+</script>
+</body>
+</html>

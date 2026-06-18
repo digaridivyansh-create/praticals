@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{font-family:Arial;background:linear-gradient(45deg,#fccb90,#d57eeb);display:flex;justify-content:center;align-items:center;height:100vh;}
+.box{background:white;padding:30px;border-radius:15px;text-align:center;width:350px;}
+input,button{width:100%;padding:10px;margin:10px 0;}
+button{background:orange;color:white;border:none;}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Factorial Calculator</h2>
+<input type="number" id="num">
+<button onclick="fact()">Calculate</button>
+<h3 id="result"></h3>
+</div>
+<script>
+function fact(){
+let n=document.getElementById("num").value;
+let f=1;
+for(let i=1;i<=n;i++) f=f*i;
+document.getElementById("result").innerHTML=f;
+}
+</script>
+</body>
+</html>

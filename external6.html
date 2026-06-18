@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{font-family:Arial;background:linear-gradient(45deg,#43cea2,#185a9d);display:flex;justify-content:center;align-items:center;height:100vh;}
+.box{background:white;padding:30px;border-radius:15px;text-align:center;width:350px;}
+input,button{width:100%;padding:10px;margin:8px 0;}
+button{background:#185a9d;color:white;border:none;}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Largest Number Finder</h2>
+<input type="number" id="a" placeholder="First Number">
+<input type="number" id="b" placeholder="Second Number">
+<input type="number" id="c" placeholder="Third Number">
+<button onclick="find()">Find Largest</button>
+<h3 id="result"></h3>
+</div>
+<script>
+function find(){
+let a=Number(document.getElementById("a").value);
+let b=Number(document.getElementById("b").value);
+let c=Number(document.getElementById("c").value);
+let max=Math.max(a,b,c);
+document.getElementById("result").innerHTML="Largest = "+max;
+}
+</script>
+</body>
+</html>
